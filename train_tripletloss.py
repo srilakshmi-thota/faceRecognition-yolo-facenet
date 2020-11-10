@@ -430,7 +430,7 @@ def parse_arguments(argv):
     parser.add_argument('--gpu_memory_fraction', type=float,
         help='Upper bound on the amount of GPU memory that will be used by the process.', default=1)
     parser.add_argument('--pretrained_model', type=str,
-        help='Load a pretrained model before training starts.', default='./models/20170512-110547/model-20170512-110547.ckpt-250000')
+        help='Load a pretrained model before training starts.')
     parser.add_argument('--data_dir', type=str,
         help='Path to the data directory containing aligned face patches.',
         default='./output')
