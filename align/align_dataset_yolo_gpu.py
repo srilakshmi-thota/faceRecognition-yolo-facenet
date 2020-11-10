@@ -146,10 +146,10 @@ def get_arguments():
     parser1.add_argument('--margin', type=int, help='Margin for the crop around the bounding box (height, width) in pixels.', default=32)
     parser1.add_argument('--random_order', help='Shuffles the order of images to enable alignment using multiple processes.', action='store_true')
     parser1.add_argument('--gpu_memory_fraction', type=float, help='Upper bound on the amount of GPU memory that will be used by the process.', default=0.5)
-    parser1.add_argument('--detect_multiple_faces', type=bool, help='Detect and align multiple faces per image.', default=False)
+    parser1.add_argument('--detect_multiple_faces', type=bool, help='Detect and align multiple faces per image.', default=True)
 
     parser2 = argparse.ArgumentParser()
-    parser2.add_argument('--model', type=str, default='yolo_weights/YOLO_Face.h5', help='path to model weights file')
+    parser2.add_argument('--model', type=str, default='YOLO_Face.h5', help='path to model weights file')
     parser2.add_argument('--anchors', type=str, default='yolo_cfg/yolo_anchors.txt', help='path to anchor definitions')
     parser2.add_argument('--classes', type=str, default='yolo_cfg/face_classes.txt', help='path to class definitions')
     parser2.add_argument('--score', type=float, default=0.5, help='the score threshold')
