@@ -15,14 +15,14 @@ with tf.Graph().as_default():
 
     with tf.Session() as sess:
 
-        datadir = './output/'
+        datadir = './aligned_faces/'
         dataset = facenet.get_dataset(datadir)
         paths, labels = facenet.get_image_paths_and_labels(dataset)
         print('Number of classes: %d' % len(dataset))
         print('Number of images: %d' % len(paths))
 
         print('Loading feature extraction model')
-        modeldir = './models/facenet/20190310-055158'
+        modeldir = './models/facenet/20201115-170523'
         facenet.load_model(modeldir)
 
         images_placeholder = tf.get_default_graph().get_tensor_by_name("input:0")
