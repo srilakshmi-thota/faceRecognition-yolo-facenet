@@ -320,7 +320,9 @@ def sample_people(dataset, people_per_batch, images_per_person):
   
     # Sample classes from the dataset
     nrof_classes = len(dataset)
+    print(len(dataset))
     class_indices = np.arange(nrof_classes)
+    print(class_indices.shape)
     np.random.shuffle(class_indices)
     
     i = 0
@@ -433,7 +435,7 @@ def parse_arguments(argv):
         help='Load a pretrained model before training starts.')
     parser.add_argument('--data_dir', type=str,
         help='Path to the data directory containing aligned face patches.',
-        default='./output')
+        default='./aligned_faces')
     parser.add_argument('--model_def', type=str,
         help='Model definition. Points to a module containing the definition of the inference graph.', default='models.inception_resnet_v1')
     parser.add_argument('--max_nrof_epochs', type=int,
@@ -481,7 +483,7 @@ def parse_arguments(argv):
     parser.add_argument('--lfw_pairs', type=str,
         help='The file containing the pairs to use for validation.', default='data/pairs.txt')
     parser.add_argument('--lfw_dir', type=str,
-        help='Path to the data directory containing aligned face patches.', default='')
+        help='Path to the data directory containing aligned face patches.', default='./aligned_faces')
     parser.add_argument('--lfw_nrof_folds', type=int,
         help='Number of folds to use for cross validation. Mainly used for testing.', default=10)
     return parser.parse_args(argv)
